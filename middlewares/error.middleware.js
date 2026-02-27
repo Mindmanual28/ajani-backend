@@ -67,7 +67,8 @@ const errorHandler = (err, req, res, next) => {
     let error = { ...err, message: err.message };
     if (error.code === 11000) error = handleDuplicateFieldsDB(error);
     if (error.name === "MulterError") error = handleMulterError(error);
-    sendErrorProd(error, res);
+    // sendErrorProd(error, res);
+    sendErrorDev(error, res);
   }
 };
 
