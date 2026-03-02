@@ -65,7 +65,7 @@ const errorHandler = (err, req, res, next) => {
 
     sendErrorDev(error, res);
   } else if (process.env.NODE_ENV === "production") {
-    let error = { ...err, message: err.message };
+    let error = err;
     if (error.code === 11000) error = handleDuplicateFieldsDB(error);
     if (error.name === "MulterError") error = handleMulterError(error);
     // sendErrorProd(error, res);
