@@ -439,6 +439,10 @@ const EventDetailsSchema = new mongoose.Schema(
           enum: ["indoor", "outdoor", "both"],
           required: true,
         },
+        hallName: {
+          type: String,
+          required: true,
+        },
         minGuestCapacity: {
           type: Number,
           required: true,
